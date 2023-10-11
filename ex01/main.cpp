@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 10:57:21 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/09 14:06:33 by laugarci         ###   ########.fr       */
+/*   Created: 2023/10/11 11:54:12 by laugarci          #+#    #+#             */
+/*   Updated: 2023/10/11 13:18:43 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "PhoneBook.hpp"
 
-#include <iostream>
-
-int main (int ac, char **av)
+int main()
 {
-	size_t	i;
 
-	i = 0;
-	if (ac == 2)
+	std::string	input;
+	PhoneBook	phonebook;
+	int i;
+
+	std::cout << "Try: 'ADD', 'SEARCH', 'EXIT'." << std::endl;
+	while (true)
 	{
-		while (i < std::strlen(av[1]))
+		std::cout << "~";
+		if (!std::getline(std::cin, input))
+			return (1);
+		i = 0;
+		while (input[i])
 		{
-			std::cout << (char)toupper(av[1][i]);
+			input[i] = std::toupper(input[i]);
 			i++;
 		}
+		if (input == "ADD")
+			phonebook.addcontact();
+		else if (input == "EXIT")
+			return (0);
 	}
-	return (0);
 }
