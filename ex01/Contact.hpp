@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 12:10:48 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/12 11:17:00 by laugarci         ###   ########.fr       */
+/*   Created: 2023/10/12 11:01:02 by laugarci          #+#    #+#             */
+/*   Updated: 2023/10/12 12:32:28 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-#include <iostream>
-#include <string>
-#include <iomanip>
-
+#include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-class PhoneBook {
+class Contact {
 	private:
-		unsigned int	i;
+		std::string firstName;
+		std::string lastName;
+		std::string nickname;
+		std::string phoneNumber;
+		std::string darkestSecret;
 	public:
-		PhoneBook(); //constructor
-		~PhoneBook(); //destructor
-		void addContact(Contact contact);
-		void	searchContact(Contact contact);
-		Contact _contact[8]; //_ convencion que indica que es de clase privada
+		void	add_new(Contact *contact);
+		std::string add_info(std::string str);
+		std::string get_number(void);
 };
 
 #endif
-

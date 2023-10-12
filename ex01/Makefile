@@ -6,13 +6,13 @@
 #    By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 10:57:33 by laugarci          #+#    #+#              #
-#    Updated: 2023/10/11 11:54:58 by laugarci         ###   ########.fr        #
+#    Updated: 2023/10/12 11:16:05 by laugarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PhoneBook
 
-SRC_FILES = PhoneBook.cpp main.cpp
+SRC_FILES = PhoneBook.cpp main.cpp Contact.cpp
 
 OBJ_DIR = objs/
 OBJ_FILES = $(SRC_FILES:.cpp=.o)

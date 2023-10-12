@@ -6,16 +6,19 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 11:54:12 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/11 13:18:43 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/10/12 11:15:35 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 int main()
 {
 
 	std::string	input;
 	PhoneBook	phonebook;
+	Contact		contact;
 	int i;
 
 	std::cout << "Try: 'ADD', 'SEARCH', 'EXIT'." << std::endl;
@@ -31,7 +34,7 @@ int main()
 			i++;
 		}
 		if (input == "ADD")
-			phonebook.addcontact();
+			phonebook.addContact(contact);
 		else if (input == "EXIT")
 			return (0);
 	}
