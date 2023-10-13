@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:01:02 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/12 18:43:18 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/10/13 11:01:05 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Contact {
 		std::string add_info(std::string str);
 		std::string get_number(void);
 		void  printContacts(Contact *contact, unsigned int j);
+		void chooseIndex(unsigned int i);
 };
 
 #endif

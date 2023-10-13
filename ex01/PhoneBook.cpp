@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:39:04 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/12 17:26:35 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/10/13 11:01:11 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	PhoneBook::searchContact(Contact contact)
 			contact.printContacts(&_contact[j], j);
 			j++;
 		}
+		contact.chooseIndex(i);
 	}
 }
 
