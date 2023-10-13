@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:39:04 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/13 15:18:42 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/10/13 17:37:45 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,14 @@ void	PhoneBook::searchContact(Contact contact)
 	else
 	{
 		j = 0;
-		while (j < i)
+		while (j < flag)
 		{
 			if (j == 0)
 				printHeader();
 			contact.printContacts(&_contact[j], j);
 			j++;
 		}	
-		index = contact.chooseIndex(i);
+		index = contact.chooseIndex(flag);
 		contact.printSelect(&_contact[index - 1]);
 	}
 }
@@ -63,11 +63,15 @@ void	PhoneBook::searchContact(Contact contact)
 void	PhoneBook::addContact(Contact contact)
 {
 	contact.add_new(&_contact[i]);
-	if (i + 1 >= 8)
+	if (i + 1 > 7)
 	{
 		i = 0;
-		flag = 1;
+		flag = 8;
 	}
 	else
+	{
 		i++;
+		if (flag != 8)
+			flag++;
+	}
 }

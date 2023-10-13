@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:10:26 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/13 13:54:25 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/10/13 17:38:54 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void Contact::printSelect(Contact *contact)
 	std::cout << BOLD"- Darkest secret: "RESET << contact->darkestSecret << std::endl << std::endl;
 }
 
-int	Contact::chooseIndex(unsigned int i)
+int	Contact::chooseIndex(unsigned int flag)
 {
 	std::string input;
 	unsigned int num;
@@ -57,7 +57,7 @@ int	Contact::chooseIndex(unsigned int i)
 		if (input.length() > 0)
 		{
 			num = stoi(input);
-			if (num > i || num < 1)
+			if (num > flag || num < 1)
 			{
 				std::cout << "Enter a valid index" << std::endl;
 				input.erase();
