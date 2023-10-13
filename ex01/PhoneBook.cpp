@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:39:04 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/13 11:01:11 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:59:06 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,19 @@ PhoneBook::~PhoneBook()
 {
 }
 
+void	PhoneBook::printHeader(void)
+{
+	std::cout << BOLD"	>> CHOOSE CONTACT << " << std::endl << std::endl;
+	std::cout << std::left << std::setw(10) << "| Index" << "|";
+	std::cout << std::left << std::setw(10) << " First Name" << "|";
+	std::cout << std::left << std::setw(10) << " Last Name " << "|";
+	std::cout << std::left << std::setw(10) << " Nickname"RESET  << std::endl;
+}
+
 void	PhoneBook::searchContact(Contact contact)
 {
 	unsigned int j;
+	unsigned int index;
 
 	if (i < 1)
 	{
@@ -37,10 +47,13 @@ void	PhoneBook::searchContact(Contact contact)
 		j = 0;
 		while (j < i)
 		{
+			if (j == 0)
+				printHeader();
 			contact.printContacts(&_contact[j], j);
 			j++;
 		}
-		contact.chooseIndex(i);
+		index = contact.chooseIndex(i);
+		contact.printSelect(&_contact[index - 1]);
 	}
 }
 
@@ -49,7 +62,10 @@ void	PhoneBook::addContact(Contact contact)
 {
 	contact.add_new(&_contact[i]);
 	if (i + 1 > 7)
+	{
 		i = 0;
+		flag = 1;
+	}
 	else
 		i++;
 }
