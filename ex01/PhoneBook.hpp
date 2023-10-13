@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:10:48 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/13 13:59:50 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/10/13 16:27:27 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ class PhoneBook {
 		unsigned int	i;
 		unsigned int	flag;
 	public:
-		PhoneBook(); //constructor
-		~PhoneBook(); //destructor
+		PhoneBook();
+		~PhoneBook();
 		void 			addContact(Contact contact);
 		void			searchContact(Contact contact);
 		void			printHeader(void);
-		Contact			 _contact[8]; //_ convencion que indica que es de clase privada
+		Contact			 _contact[8];
 };
 
 #endif

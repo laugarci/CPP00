@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:39:04 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/13 13:59:06 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/10/13 15:18:42 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,13 @@ void	PhoneBook::searchContact(Contact contact)
 {
 	unsigned int j;
 	unsigned int index;
+	std::string input;
 
-	if (i < 1)
+	if (i < 1 && flag == 0)
 	{
 		std::cout << "\e[1;31m >>> No contacts yet <<<" <<std::endl;
 		std::cout << "\x1B[0m";
+		return ;
 	}
 	else
 	{
@@ -51,7 +53,7 @@ void	PhoneBook::searchContact(Contact contact)
 				printHeader();
 			contact.printContacts(&_contact[j], j);
 			j++;
-		}
+		}	
 		index = contact.chooseIndex(i);
 		contact.printSelect(&_contact[index - 1]);
 	}
@@ -61,7 +63,7 @@ void	PhoneBook::searchContact(Contact contact)
 void	PhoneBook::addContact(Contact contact)
 {
 	contact.add_new(&_contact[i]);
-	if (i + 1 > 7)
+	if (i + 1 >= 8)
 	{
 		i = 0;
 		flag = 1;
