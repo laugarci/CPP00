@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:39:04 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/14 12:58:50 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/10/14 13:05:44 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ PhoneBook::~PhoneBook()
 
 void	PhoneBook::printHeader(void)
 {
-	std::cout << BOLD"	>> CHOOSE CONTACT << " << std::endl << std::endl;
+	std::cout << BOLD"		>> CHOOSE CONTACT << " << std::endl << std::endl;
 	std::cout << std::right << std::setw(10) << "Index|";
 	std::cout << std::right << std::setw(10) << " First Name|";
 	std::cout << std::right << std::setw(10) << " Last Name |";
