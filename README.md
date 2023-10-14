@@ -1,6 +1,6 @@
 # Conceptos de CPP00
 
-### Vectores en C++
+### Vectores
 
 Un vector es una estructura de datos de tamaño fijo y contiguo en memoria. Los elementos de un vector se almacenan uno al lado del otro, lo que permite un acceso rápido y aleatorio a los elementos a través de un índice. En C++, los vectores se implementan mediante la clase std::vector y se asignan automáticamente más memoria si es necesario al agregar elementos, pero el almacenamiento es contiguo.
 
