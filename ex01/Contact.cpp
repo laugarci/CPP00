@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:10:26 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/13 17:38:54 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/10/14 13:00:50 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,20 +69,19 @@ int	Contact::chooseIndex(unsigned int flag)
 
 void Contact::printContacts(Contact *contact, unsigned int index)
 {
-	std::cout << BOLD"| "RESET;
-	std::cout << std::left << std::setw(8) << std::left << index + 1 << BOLD"| "RESET;
+	std::cout << std::right << std::setw(9) << index + 1 << BOLD"|"RESET;
 	if (contact->firstName.size() > 10)
-		std::cout << std::left << std::setw(9) << contact->firstName.substr(0, 9) << ". " << BOLD"| "RESET;
+		std::cout << std::right << std::setw(9) <<contact->firstName.substr(0, 9) << ". " << BOLD"|"RESET;
 	else
-		std::cout << std::left << std::setw(10) << contact->firstName << BOLD"| "RESET;
+		std::cout << std::right << std::setw(10) << contact->firstName << BOLD" |"RESET;
 	if (contact->lastName.size() > 10)
-		std::cout << std::left << std::setw(9) << contact->lastName.substr(0, 9) << ". " << BOLD"|"RESET;
+		std::cout << std::right << std::setw(9) << contact->lastName.substr(0, 9) << ". " << BOLD"|"RESET;
 	else
-		std::cout << std::left << std::setw(10) << contact->lastName << BOLD"| "RESET;
+		std::cout << std::right << std::setw(10) << contact->lastName << BOLD" |"RESET;
 	if (contact->nickname.size() > 10)
-		std::cout << std::left << std::setw(9) << contact->nickname.substr(0, 9) << ". " << std::endl << std::endl;
+		std::cout << std::right << std::setw(9) << contact->nickname.substr(0, 9) << "." << std::endl << std::endl;
 	else
-		std::cout << std::left << std::setw(10) << contact->nickname << std::endl << std::endl;
+		std::cout << std::right << std::setw(10) << contact->nickname << std::endl << std::endl;
 }
 
 std::string Contact::add_info(const std::string str)

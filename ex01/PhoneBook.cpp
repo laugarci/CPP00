@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:39:04 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/13 17:37:45 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/10/14 12:58:50 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ PhoneBook::~PhoneBook()
 void	PhoneBook::printHeader(void)
 {
 	std::cout << BOLD"	>> CHOOSE CONTACT << " << std::endl << std::endl;
-	std::cout << std::left << std::setw(10) << "| Index" << "|";
-	std::cout << std::left << std::setw(10) << " First Name" << "|";
-	std::cout << std::left << std::setw(10) << " Last Name " << "|";
-	std::cout << std::left << std::setw(10) << " Nickname"RESET  << std::endl;
+	std::cout << std::right << std::setw(10) << "Index|";
+	std::cout << std::right << std::setw(10) << " First Name|";
+	std::cout << std::right << std::setw(10) << " Last Name |";
+	std::cout << std::right << std::setw(10) << " Nickname"RESET  << std::endl;
 }
 
 void	PhoneBook::searchContact(Contact contact)
