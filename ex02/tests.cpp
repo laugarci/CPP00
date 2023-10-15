@@ -13,11 +13,10 @@
 #include "Account.hpp"
 
 
-int		main( void ) {
+/*int		main( void )
+{
 
-	//vector que almacena accounts_t
 	typedef std::vector<Account::t>							  accounts_t;
-	//vector que almacena ints
 	typedef std::vector<int>								  ints_t;
 	//std::pair es una estructura de datos que contiene dos elementos, uno llamado "first" (primero) y otro llamado "second" (segundo).
 	typedef std::pair<accounts_t::iterator, ints_t::iterator> acc_int_t;
@@ -74,7 +73,7 @@ int		main( void ) {
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 
 	return 0;
-}
+}*/
 
 
 // ************************************************************************** //
@@ -86,19 +85,19 @@ int		main( void ) {
 
 //Mismo codigo con bucles while y mas ordenado:
 
-/*int main() {
+int main()
+{
+	typedef std::vector<Account::t> accounts_t;
+	typedef std::vector<int> ints_t;
+//	typedef std::pair<accounts_t::iterator, ints_t::iterator> acc_int_t;
+	
+	int const amounts[] = {42, 54, 957, 432, 1234, 0, 754, 16576};
+	size_t const amounts_size( sizeof(amounts) / sizeof(int) );
+	accounts_t accounts( amounts, amounts + amounts_size );
+	accounts_t::iterator acc_begin = accounts.begin();
+	accounts_t::iterator acc_end = accounts.end();
 
-    typedef std::vector<Account::t> accounts_t;
-    typedef std::vector<int> ints_t;
-    typedef std::pair<accounts_t::iterator, ints_t::iterator> acc_int_t;
-
-    int const amounts[] = {42, 54, 957, 432, 1234, 0, 754, 16576};
-    size_t const amounts_size( sizeof(amounts) / sizeof(int) );
-    accounts_t accounts( amounts, amounts + amounts_size );
-    accounts_t::iterator acc_begin = accounts.begin();
-    accounts_t::iterator acc_end = accounts.end();
-
-    int const d[] = {5, 765, 564, 2, 87, 23, 9, 20};
+/*    int const d[] = {5, 765, 564, 2, 87, 23, 9, 20};
     size_t const d_size( sizeof(d) / sizeof(int) );
     ints_t deposits( d, d + d_size );
     ints_t::iterator dep_begin = deposits.begin();
@@ -108,11 +107,11 @@ int		main( void ) {
     size_t const w_size( sizeof(w) / sizeof(int) );
     ints_t withdrawals( w, w + w_size );
     ints_t::iterator wit_begin = withdrawals.begin();
-    ints_t::iterator wit_end = withdrawals.end();
+    ints_t::iterator wit_end = withdrawals.end();*/
 
     Account::displayAccountsInfos();
-    std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
-
+	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+/*
     acc_int_t it_dep(acc_begin, dep_begin);
     while (it_dep.first != acc_end && it_dep.second != dep_end) {
         (*(it_dep.first)).makeDeposit( *(it_dep.second) );
@@ -131,8 +130,8 @@ int		main( void ) {
     }
 
     Account::displayAccountsInfos();
-    std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+    std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );*/
 
     return 0;
-}*/
+}
 
