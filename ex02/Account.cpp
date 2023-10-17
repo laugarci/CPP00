@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 00:38:25 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/17 12:36:51 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/10/17 15:03:25 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,12 @@ Account::Account(int initial_deposit) //constructor
 
 Account::~Account(void) //destructor
 {
+	_displayTimestamp();
 	std::cout << "index:" <<  _accountIndex << ";amount:" << _amount << ";closed" << std::endl;
 }
 
 void Account::_displayTimestamp(void) {
-    std::cout << "[199201004_091532] ";
+    std::cout << "[19920104_091532] ";
 }
 
 void Account::displayAccountsInfos(void)
@@ -53,11 +54,33 @@ void	Account::displayStatus(void) const
 
 void	Account::makeDeposit(int deposit)
 {
-	_nbDeposits++;
+	int amount;
+
+	amount = _amount;
 	_amount += deposit;
+	_nbDeposits++;
+	_totalNbDeposits += _nbDeposits;
+	_totalAmount += deposit;
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex << ";p_amount:" << amount << ";deposit:" << deposit << ";amount:" << amount + deposit << ";nb_deposits:" << _nbDeposits << std::endl;
+
 }
 
 bool	Account::makeWithdrawal(int withdrawal)
 {
+	int amount;
 
+	amount = _amount;
+	_displayTimestamp();
+	if (withdrawal > amount)
+	{
+		std::cout << "index:" << _accountIndex << ";p_amount:" << amount << ";withdrawal:refused" << std::endl;
+		return (false);
+	}
+	_totalNbWithdrawals++;
+	_amount -= withdrawal;
+	_totalAmount -= withdrawal;
+	_nbWithdrawals++;
+	std::cout << "index:" << _accountIndex << ";p_amount:" << amount << ";withdrawal:" << withdrawal << ";amount:" << _amount << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
+	return (true);
 }
