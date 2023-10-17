@@ -83,8 +83,6 @@
 // -*- fill-column: 75; comment-column: 75;                                  -*-
 // ************************************************************************** //
 
-//Mismo codigo con bucles while y mas ordenado:
-
 #include <iostream>
 
 int main()
