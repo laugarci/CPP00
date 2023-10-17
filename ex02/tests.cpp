@@ -85,19 +85,23 @@
 
 //Mismo codigo con bucles while y mas ordenado:
 
+#include <iostream>
+
 int main()
 {
 	typedef std::vector<Account::t> accounts_t;
 	typedef std::vector<int> ints_t;
-//	typedef std::pair<accounts_t::iterator, ints_t::iterator> acc_int_t;
+	typedef std::pair<accounts_t::iterator, ints_t::iterator> acc_int_t;
 	
 	int const amounts[] = {42, 54, 957, 432, 1234, 0, 754, 16576};
 	size_t const amounts_size( sizeof(amounts) / sizeof(int) );
+
+	//inicializacion de rango:  se utiliza para copiar un rango de elementos, en este caso, desde el array amounts, en el vector accounts. está utilizando los valores del array amounts para inicializar el vector accounts directamente. Esto se hace para copiar todos los elementos del array amounts en el vector accounts. La variable amounts es tratada como un rango de valores que se copian en el vector accounts.
 	accounts_t accounts( amounts, amounts + amounts_size );
 	accounts_t::iterator acc_begin = accounts.begin();
 	accounts_t::iterator acc_end = accounts.end();
 
-/*    int const d[] = {5, 765, 564, 2, 87, 23, 9, 20};
+   int const d[] = {5, 765, 564, 2, 87, 23, 9, 20};
     size_t const d_size( sizeof(d) / sizeof(int) );
     ints_t deposits( d, d + d_size );
     ints_t::iterator dep_begin = deposits.begin();
@@ -107,11 +111,11 @@ int main()
     size_t const w_size( sizeof(w) / sizeof(int) );
     ints_t withdrawals( w, w + w_size );
     ints_t::iterator wit_begin = withdrawals.begin();
-    ints_t::iterator wit_end = withdrawals.end();*/
+    ints_t::iterator wit_end = withdrawals.end();
 
     Account::displayAccountsInfos();
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
-/*
+
     acc_int_t it_dep(acc_begin, dep_begin);
     while (it_dep.first != acc_end && it_dep.second != dep_end) {
         (*(it_dep.first)).makeDeposit( *(it_dep.second) );
@@ -120,6 +124,9 @@ int main()
     }
 
     Account::displayAccountsInfos();
+//	std::for_each es un algoritmo  que se utiliza para aplicar una función (o función objeto) a cada elemento en un rango especificado.
+//	td::mem_fun_ref: Es una función o adaptador que se utiliza para crear objetos función que envuelven un método de una clase. En este caso, mem_fun_ref se utiliza para envolver el método displayStatus de la clase Account en un objeto función. Un objeto función es un objeto que se comporta como una función
+//	En resumen, esta línea de código aplica el método displayStatus de la clase Account a cada elemento dentro del rango definido por acc_begin y acc_end.
     std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 
     acc_int_t it_wit(acc_begin, wit_begin);
@@ -130,7 +137,7 @@ int main()
     }
 
     Account::displayAccountsInfos();
-    std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );*/
+    std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 
     return 0;
 }

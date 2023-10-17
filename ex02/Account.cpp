@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 00:38:25 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/15 19:42:49 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/10/17 12:36:51 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,8 @@ Account::Account(int initial_deposit) //constructor
 	std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";created" << std::endl;
 }
 
-
 Account::~Account(void) //destructor
 {
-	std::cout << "Entra al destructor" << std::endl;
 	std::cout << "index:" <<  _accountIndex << ";amount:" << _amount << ";closed" << std::endl;
 }
 
@@ -53,14 +51,13 @@ void	Account::displayStatus(void) const
 	std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";deposits:" << _nbDeposits << ";withdrawals:" << _nbWithdrawals  << std::endl;
 }
 
-/*
-void	makeDeposit(int deposit)
+void	Account::makeDeposit(int deposit)
 {
-	std::cout << deposit << std::endl;
+	_nbDeposits++;
+	_amount += deposit;
 }
 
-bool makeWithdrawal(int withdrawal)
+bool	Account::makeWithdrawal(int withdrawal)
 {
-}
 
-*/
+}
