@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 00:38:25 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/17 15:03:25 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/10/18 10:45:15 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,21 @@ bool	Account::makeWithdrawal(int withdrawal)
 	_nbWithdrawals++;
 	std::cout << "index:" << _accountIndex << ";p_amount:" << amount << ";withdrawal:" << withdrawal << ";amount:" << _amount << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
 	return (true);
+}
+
+int	Account::getNbAccounts( void )
+{
+	return (_nbAccounts);
+}
+int	Account::getTotalAmount( void )
+{
+	return (_totalAmount);
+}
+int	Account::getNbDeposits( void )
+{
+	return (_totalNbDeposits);
+}
+int	Account::getNbWithdrawals( void )
+{
+	return (_totalNbWithdrawals);
 }
