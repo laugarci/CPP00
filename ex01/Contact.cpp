@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:10:26 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/14 13:00:50 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/10/19 15:37:41 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,9 @@ void Contact::printContacts(Contact *contact, unsigned int index)
 std::string Contact::add_info(const std::string str)
 {
     std::string input;
+	int i;
 
+	i = 0;
     while (input.length() < 1)
 	{
         input.erase();
@@ -95,6 +97,16 @@ std::string Contact::add_info(const std::string str)
         std::cout << RESET; 
 		if (!std::getline(std::cin, input))
             break ;
+		while (input[i])
+		{
+			if (!isalpha(input[i]))
+			{
+				std::cout << "Please. enter valid information" << std::endl;
+				input.erase();
+				break ;
+			}
+			i++;
+		}
     }
     return (input);
 }
@@ -134,3 +146,5 @@ void	Contact::add_new(Contact *contact)
 	contact->phoneNumber = get_number();
 	contact->darkestSecret = add_info("Darkest Secret:");
 }
+
+
