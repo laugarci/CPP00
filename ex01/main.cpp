@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 11:54:12 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/19 15:27:46 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/10/24 09:59:09 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,3 @@ int main()
 			return (0);
 	}
 }
-
-bool esStringDeCaracteres(const std::string &cadena) {
-    for (size_t i = 0; i < cadena.length(); i++) {
-        if (!isalpha(cadena[i])) {
-            return false;
-        }
-    }
-    return true;
-}
-
