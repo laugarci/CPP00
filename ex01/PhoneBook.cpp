@@ -6,14 +6,11 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:39:04 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/14 13:05:44 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:47:31 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  <iostream>
-#include  <bits/stdc++.h>
 #include "PhoneBook.hpp"
-#include "Contact.hpp"
 
 PhoneBook::PhoneBook()
 {

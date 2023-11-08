@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:10:48 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/13 16:27:27 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:47:33 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <bits/stdc++.h>
 
 #include "Contact.hpp"
 
