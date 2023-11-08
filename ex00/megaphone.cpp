@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 10:57:21 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/13 10:35:48 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/11/08 09:44:30 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main (int ac, char **av)
 			std::cout << (char)toupper(av[1][i]);
 			i++;
 		}
+		std::cout << std::endl;
 	}
 	else
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
