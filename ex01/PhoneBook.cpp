@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:39:04 by laugarci          #+#    #+#             */
-/*   Updated: 2023/11/08 15:47:31 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/11/09 14:25:07 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	PhoneBook::searchContact(Contact contact)
 
 void	PhoneBook::addContact(Contact contact)
 {
-	contact.add_new(&_contact[i]);
+	contact.addNew(&_contact[i]);
 	if (i + 1 > 7)
 	{
 		i = 0;

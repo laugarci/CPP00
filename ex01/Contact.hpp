@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:01:02 by laugarci          #+#    #+#             */
-/*   Updated: 2023/10/13 13:54:50 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/11/09 14:16:49 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ class Contact {
 	public:
 		Contact();
 		~Contact();
-		void			add_new(Contact *contact);
-		std::string		add_info(std::string str);
-		std::string 	get_number(void);
+		void			addNew(Contact *contact);
+		std::string		addInfo(std::string str);
+		std::string 	getNumber(void);
 		void  			printContacts(Contact *contact, unsigned int index);
 		int 			chooseIndex(unsigned int i);
 		void			printSelect(Contact *contact);

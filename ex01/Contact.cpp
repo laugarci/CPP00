@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:10:26 by laugarci          #+#    #+#             */
-/*   Updated: 2023/11/08 15:16:11 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/11/09 12:39:21 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void Contact::printContacts(Contact *contact, unsigned int index)
 		std::cout << std::right << std::setw(10) << contact->nickname << std::endl << std::endl;
 }
 
-std::string Contact::add_info(const std::string str)
+std::string Contact::addInfo(const std::string str)
 {
     std::string input;
 	int i;
@@ -111,7 +111,7 @@ std::string Contact::add_info(const std::string str)
     return (input);
 }
 
-std::string	Contact::get_number(void)
+std::string	Contact::getNumber(void)
 {
 	std::string	input;
 	unsigned int j;
@@ -138,13 +138,13 @@ std::string	Contact::get_number(void)
 	return (input);
 }
 
-void	Contact::add_new(Contact *contact)
+void	Contact::addNew(Contact *contact)
 {
-	contact->firstName = add_info("First name:");
-	contact->lastName = add_info("Last Name:");
-	contact->nickname = add_info("Nickname:");
-	contact->phoneNumber = get_number();
-	contact->darkestSecret = add_info("Darkest Secret:");
+	contact->firstName = addInfo("First name:");
+	contact->lastName = addInfo("Last Name:");
+	contact->nickname = addInfo("Nickname:");
+	contact->phoneNumber = getNumber();
+	contact->darkestSecret = addInfo("Darkest Secret:");
 }
 
 
