@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 00:38:25 by laugarci          #+#    #+#             */
-/*   Updated: 2023/11/09 12:09:43 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/11/09 14:41:33 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
 
-Account::Account(int initial_deposit) //constructor
+Account::Account(int initial_deposit)
 {
 	_accountIndex = _nbAccounts;
 	_amount = initial_deposit;
@@ -30,13 +30,14 @@ Account::Account(int initial_deposit) //constructor
 	std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";created" << std::endl;
 }
 
-Account::~Account(void) //destructor
+Account::~Account(void)
 {
 	_displayTimestamp();
 	std::cout << "index:" <<  _accountIndex << ";amount:" << _amount << ";closed" << std::endl;
 }
 
-void Account::_displayTimestamp(void) {
+void Account::_displayTimestamp(void)
+{
     std::cout << "[19920104_091532] ";
 }
 
@@ -85,19 +86,19 @@ bool	Account::makeWithdrawal(int withdrawal)
 	return (true);
 }
 
-int	Account::getNbAccounts( void )
+int	Account::getNbAccounts(void)
 {
 	return (_nbAccounts);
 }
-int	Account::getTotalAmount( void )
+int	Account::getTotalAmount(void)
 {
 	return (_totalAmount);
 }
-int	Account::getNbDeposits( void )
+int	Account::getNbDeposits(void)
 {
 	return (_totalNbDeposits);
 }
-int	Account::getNbWithdrawals( void )
+int	Account::getNbWithdrawals(void)
 {
 	return (_totalNbWithdrawals);
 }
