@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:10:26 by laugarci          #+#    #+#             */
-/*   Updated: 2023/11/09 12:39:21 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:20:56 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void Contact::printContacts(Contact *contact, unsigned int index)
 {
 	std::cout << std::right << std::setw(9) << index + 1 << BOLD"|"RESET;
 	if (contact->firstName.size() > 10)
-		std::cout << std::right << std::setw(9) <<contact->firstName.substr(0, 9) << ". " << BOLD"|"RESET;
+		std::cout << std::right << std::setw(9) << contact->firstName.substr(0, 9) << ". " << BOLD"|"RESET;
 	else
 		std::cout << std::right << std::setw(10) << contact->firstName << BOLD" |"RESET;
 	if (contact->lastName.size() > 10)
@@ -146,5 +146,3 @@ void	Contact::addNew(Contact *contact)
 	contact->phoneNumber = getNumber();
 	contact->darkestSecret = addInfo("Darkest Secret:");
 }
-
-
