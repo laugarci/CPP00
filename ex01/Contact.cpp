@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:10:26 by laugarci          #+#    #+#             */
-/*   Updated: 2023/11/09 15:20:56 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/12/12 10:10:44 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int	Contact::chooseIndex(unsigned int flag)
 	num = 0;
 	while (input.length() < 1)
 	{
-		input.erase();
 		std::cout << BOLD"Which contact do you want to see? "RESET;
 		if (!std::getline(std::cin, input))
 			break ;
@@ -88,20 +87,23 @@ std::string Contact::addInfo(const std::string str)
 {
     std::string input;
 	int i;
+	int	flag;
 
 	i = 0;
+	flag = 0;
     while (input.length() < 1)
 	{
-        input.erase();
-        std::cout << BOLD << std::left << std::setw(20) << str;
-        std::cout << RESET; 
+		std::cout << BOLD << std::left << std::setw(20) << str;
+		std::cout << RESET; 
 		if (!std::getline(std::cin, input))
-            break ;
+			break ;
 		while (input[i])
 		{
-			if (!isalpha(input[i]))
+			if (isalpha(input[i]))
+				flag = 1;
+			if ((!isalpha(input[i]) && !isspace(input[i])) || (flag == 0)) 
 			{
-				std::cout << "Please. enter valid information" << std::endl;
+				std::cout << "Please, enter valid information. Only letters and spaces are allowed. Leading spaces are not permitted." << std::endl;
 				input.erase();
 				break ;
 			}
@@ -116,10 +118,8 @@ std::string	Contact::getNumber(void)
 	std::string	input;
 	unsigned int j;
 
-
 	while (input.length() < 1)
 	{
-		input.erase();
 		std::cout << BOLD << std::left << std::setw(20) << "Phone number:";
 		std::cout << RESET;
 		if (!std::getline(std::cin, input))
